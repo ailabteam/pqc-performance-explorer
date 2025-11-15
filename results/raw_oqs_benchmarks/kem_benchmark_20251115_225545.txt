@@ -1,0 +1,23 @@
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.15.0 (major: 0, minor: 15, patch: 0)
+Git commit:       97f6b86b1b6d109cfd43cf276ae39c2e776aed80
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  BUILD_SHARED_LIBS OQS_DIST_BUILD OQS_LIBJADE_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-15 22:55:45
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Classic-McEliece-348864              |            |                |                 |            |                           |           
+keygen                               |         18 |          3.052 |      169570.500 | 117932.997 |                 406938773 |  283018614
+encaps                               |      51901 |          3.000 |          57.803 |      8.094 |                    138580 |      19385
+decaps                               |        164 |          3.010 |       18351.201 |    559.544 |                  44039397 |    1342728
+Ended at 2025-11-15 22:55:54

@@ -1,0 +1,46 @@
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.15.0 (major: 0, minor: 15, patch: 0)
+Git commit:       97f6b86b1b6d109cfd43cf276ae39c2e776aed80
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  BUILD_SHARED_LIBS OQS_DIST_BUILD OQS_LIBJADE_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-15 22:55:54
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Falcon-512                           |            |                |                 |            |                           |           
+keypair                              |        186 |          3.002 |       16137.559 |   4985.830 |                  38726989 |   11965189
+sign                                 |        629 |          3.001 |        4770.860 |    122.771 |                  11448880 |     294654
+verify                               |      61006 |          3.000 |          49.176 |      4.636 |                    117880 |      11048
+Ended at 2025-11-15 22:56:03
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.15.0 (major: 0, minor: 15, patch: 0)
+Git commit:       97f6b86b1b6d109cfd43cf276ae39c2e776aed80
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  BUILD_SHARED_LIBS OQS_DIST_BUILD OQS_LIBJADE_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-15 22:56:03
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Falcon-1024                          |            |                |                 |            |                           |           
+keypair                              |         64 |          3.041 |       47519.484 |  13722.889 |                 114038013 |   32932252
+sign                                 |        285 |          3.009 |       10558.863 |    219.764 |                  25339175 |     527462
+verify                               |      29306 |          3.000 |         102.369 |      6.220 |                    245516 |      14864
+Ended at 2025-11-15 22:56:12
