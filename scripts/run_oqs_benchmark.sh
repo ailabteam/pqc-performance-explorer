@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script to run benchmarks with all algorithm names corrected for liboqs v0.10.0.
+# Script để chạy benchmark tốc độ VÀ thu thập dữ liệu sử dụng RAM đỉnh.
 # Run from the project root directory.
 
 # --- Cấu hình ---
@@ -32,21 +32,39 @@ fi
 
 mkdir -p "${RESULTS_DIR}"
 
-echo "--- Running KEM speed test (1s duration each) ---"
+# --- KEM: Tốc độ và RAM ---
+echo "--- Running KEM speed & memory test (1s duration each) ---"
 KEM_OUT_FILE="${RESULTS_DIR}/kem_benchmark_${TIMESTAMP}.txt"
-> "$KEM_OUT_FILE"
+> "$KEM_OUT_FILE" # Xóa file cũ
+
 for alg in "${KEM_ALGS_TO_TEST[@]}"; do
     echo "Benchmarking KEM: $alg"
-    ${BENCHMARK_EXEC_DIR}/speed_kem --duration 1 "$alg" >> "$KEM_OUT_FILE" 2>&1
+    
+    # Thêm một dòng đánh dấu đặc biệt để parser dễ dàng xác định
+    echo "--- BEGIN ALGORITHM: ${alg} ---" >> "$KEM_OUT_FILE"
+    
+    # Chạy lệnh benchmark được bọc bởi /usr/bin/time -v
+    # Cả stdout và stderr đều được ghi vào file output
+    /usr/bin/time -v ${BENCHMARK_EXEC_DIR}/speed_kem --duration 1 "$alg" >> "$KEM_OUT_FILE" 2>&1
+    
+    # Thêm một dòng kết thúc
+    echo "--- END ALGORITHM: ${alg} ---" >> "$KEM_OUT_FILE"
+    echo "" >> "$KEM_OUT_FILE" # Thêm dòng trống cho dễ đọc
 done
 echo "KEM results saved to $KEM_OUT_FILE"
 
 
-echo "--- Running Signature speed test (1s duration each) ---"
+# --- Signature: Tốc độ và RAM ---
+echo "--- Running Signature speed & memory test (1s duration each) ---"
 SIG_OUT_FILE="${RESULTS_DIR}/sig_benchmark_${TIMESTAMP}.txt"
-> "$SIG_OUT_FILE"
+> "$SIG_OUT_FILE" # Xóa file cũ
+
 for alg in "${SIG_ALGS_TO_TEST[@]}"; do
     echo "Benchmarking Signature: $alg"
-    ${BENCHMARK_EXEC_DIR}/speed_sig --duration 1 "$alg" >> "$SIG_OUT_FILE" 2>&1
+
+    echo "--- BEGIN ALGORITHM: ${alg} ---" >> "$SIG_OUT_FILE"
+    /usr/bin/time -v ${BENCHMARK_EXEC_DIR}/speed_sig --duration 1 "$alg" >> "$SIG_OUT_FILE" 2>&1
+    echo "--- END ALGORITHM: ${alg} ---" >> "$SIG_OUT_FILE"
+    echo "" >> "$SIG_OUT_FILE"
 done
 echo "Signature results saved to $SIG_OUT_FILE"

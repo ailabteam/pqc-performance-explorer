@@ -1,0 +1,245 @@
+--- BEGIN ALGORITHM: Kyber512 ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:12:41
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Kyber512                             |            |                |                 |            |                           |           
+keygen                               |      24680 |          1.000 |          40.519 |     12.459 |                     97105 |      29884
+encaps                               |      20892 |          1.000 |          47.865 |      3.988 |                    114719 |       9492
+decaps                               |      18139 |          1.000 |          55.130 |      4.017 |                    132200 |       9562
+Ended at 2025-11-19 19:12:44
+	Command being timed: "third_party/liboqs/build/tests/speed_kem --duration 1 Kyber512"
+	User time (seconds): 2.97
+	System time (seconds): 0.02
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 398
+	Voluntary context switches: 1
+	Involuntary context switches: 4
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: Kyber512 ---
+
+--- BEGIN ALGORITHM: Kyber768 ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:12:44
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Kyber768                             |            |                |                 |            |                           |           
+keygen                               |      14641 |          1.000 |          68.304 |     15.297 |                    163780 |      36707
+encaps                               |      12952 |          1.000 |          77.210 |      4.339 |                    185129 |      10349
+decaps                               |      11522 |          1.000 |          86.792 |      5.040 |                    208167 |      12056
+Ended at 2025-11-19 19:12:47
+	Command being timed: "third_party/liboqs/build/tests/speed_kem --duration 1 Kyber768"
+	User time (seconds): 2.98
+	System time (seconds): 0.01
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 398
+	Voluntary context switches: 1
+	Involuntary context switches: 3
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: Kyber768 ---
+
+--- BEGIN ALGORITHM: Kyber1024 ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:12:47
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Kyber1024                            |            |                |                 |            |                           |           
+keygen                               |       9558 |          1.000 |         104.626 |     19.557 |                    250959 |      46924
+encaps                               |       8899 |          1.000 |         112.374 |      4.513 |                    269540 |      10765
+decaps                               |       8007 |          1.000 |         124.906 |      6.317 |                    299647 |      15096
+Ended at 2025-11-19 19:12:50
+	Command being timed: "third_party/liboqs/build/tests/speed_kem --duration 1 Kyber1024"
+	User time (seconds): 2.99
+	System time (seconds): 0.01
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 401
+	Voluntary context switches: 1
+	Involuntary context switches: 6
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: Kyber1024 ---
+
+--- BEGIN ALGORITHM: Classic-McEliece-348864 ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:12:50
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Classic-McEliece-348864              |            |                |                 |            |                           |           
+keygen                               |          8 |          1.063 |      132836.000 |  73589.316 |                 318800408 |  176611434
+encaps                               |      17675 |          1.000 |          56.580 |      7.641 |                    135604 |      18293
+decaps                               |         55 |          1.006 |       18282.600 |    212.733 |                  43876932 |     510498
+Ended at 2025-11-19 19:12:53
+	Command being timed: "third_party/liboqs/build/tests/speed_kem --duration 1 Classic-McEliece-348864"
+	User time (seconds): 3.05
+	System time (seconds): 0.01
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7680
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 563
+	Voluntary context switches: 1
+	Involuntary context switches: 9
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: Classic-McEliece-348864 ---
+
+--- BEGIN ALGORITHM: HQC-128 ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:12:53
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+HQC-128                              |            |                |                 |            |                           |           
+keygen                               |        534 |          1.001 |        1874.466 |     98.936 |                   4498373 |     237397
+encaps                               |        263 |          1.001 |        3806.034 |     97.101 |                   9133894 |     233013
+decaps                               |        165 |          1.003 |        6078.739 |    126.267 |                  14588369 |     302941
+Ended at 2025-11-19 19:12:56
+	Command being timed: "third_party/liboqs/build/tests/speed_kem --duration 1 HQC-128"
+	User time (seconds): 3.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 411
+	Voluntary context switches: 1
+	Involuntary context switches: 13
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: HQC-128 ---
+

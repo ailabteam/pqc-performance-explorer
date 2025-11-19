@@ -1,90 +1,83 @@
+# File: analysis/parse_results.py
+# Version: 2.0 (Nâng cấp để xử lý output hỗn hợp từ speed_kem và /usr/bin/time)
+
 import pandas as pd
 import argparse
 import os
+import re # Thư viện biểu thức chính quy
 
-def parse_oqs_table_output_final(input_file, operations):
-    """
-    Parses the multi-block, table-based output from OQS speed tests.
-    This version correctly identifies algorithm and operation rows.
-    """
+def parse_combined_output(file_content, operations):
     results = []
-    current_algorithm = None
-    current_timings = {}
+    algorithm_blocks = re.findall(r'--- BEGIN ALGORITHM: (.*?) ---\n(.*?)\n--- END ALGORITHM: \1 ---', file_content, re.DOTALL)
 
-    try:
-        with open(input_file, 'r') as f:
-            for line in f:
-                # Tách dòng thành các cột dựa trên dấu '|'
-                columns = [col.strip() for col in line.split('|')]
-                
-                # Bỏ qua các dòng không phải là dữ liệu bảng
-                if len(columns) < 2 or not columns[0]:
-                    continue
-                
-                first_col_content = columns[0]
-
-                # Kiểm tra xem dòng này là dòng operation hay dòng tên thuật toán
-                if first_col_content in operations:
-                    # Đây là một dòng operation (keygen, encaps, etc.)
-                    if current_algorithm and len(columns) >= 4:
-                        try:
-                            # Lấy giá trị mean time (us) và chuyển sang ns
-                            time_us = float(columns[3])
-                            current_timings[first_col_content] = int(time_us * 1000)
-                        except ValueError:
-                            continue # Bỏ qua nếu cột không phải là số
-                elif first_col_content not in ["Operation", "------------------------------------"]:
-                    # Đây là một dòng tên thuật toán mới
-                    # Lưu kết quả của thuật toán cũ lại (nếu có đủ dữ liệu)
-                    if current_algorithm and len(current_timings) == len(operations):
-                        ordered_times = [current_timings.get(op) for op in operations]
-                        results.append([current_algorithm] + ordered_times)
-
-                    # Bắt đầu xử lý thuật toán mới
-                    current_algorithm = first_col_content
-                    current_timings = {}
-
-            # Lưu lại thuật toán cuối cùng trong file
-            if current_algorithm and len(current_timings) == len(operations):
-                ordered_times = [current_timings.get(op) for op in operations]
-                results.append([current_algorithm] + ordered_times)
-
-    except FileNotFoundError:
-        print(f"Error: Input file not found at {input_file}")
-        exit(1)
+    for alg_name, block_content in algorithm_blocks:
+        record = {'algorithm': alg_name}
         
+        # --- 1. Trích xuất dữ liệu Tốc độ từ bảng ---
+        speed_lines = block_content.split('\n')
+        for line in speed_lines:
+            columns = [col.strip() for col in line.split('|')]
+            if len(columns) < 4:
+                continue
+            op_name = columns[0]
+            if op_name in operations:
+                try:
+                    time_us = float(columns[3])
+                    record[f'{op_name}_ns'] = int(time_us * 1000)
+                except (ValueError, IndexError):
+                    continue
+        
+        # --- 2. Trích xuất dữ liệu RAM từ output của /usr/bin/time ---
+        ram_match = re.search(r'Maximum resident set size \(kbytes\): (\d+)', block_content)
+        if ram_match:
+            record['peak_ram_kb'] = int(ram_match.group(1))
+        else:
+            record['peak_ram_kb'] = None 
+
+        op_keys_found = all(f'{op}_ns' in record for op in operations)
+        if op_keys_found:
+            results.append(record)
+
     return results
 
 def main():
-    parser = argparse.ArgumentParser(description="Parse OQS benchmark results into a CSV file.")
+    parser = argparse.ArgumentParser(description="Parse OQS benchmark results (speed and memory) into a CSV file.")
     parser.add_argument("input_file", help="Path to the raw benchmark .txt file.")
     parser.add_argument("output_file", help="Path to save the output .csv file.")
     parser.add_argument("--type", choices=['kem', 'sig'], required=True, help="Type of benchmark: 'kem' or 'sig'.")
-    
+
     args = parser.parse_args()
 
     if args.type == 'kem':
         operations = ['keygen', 'encaps', 'decaps']
-        columns = ['algorithm', 'keypair_ns', 'encaps_ns', 'decaps_ns']
+        csv_columns = ['algorithm', 'keygen_ns', 'encaps_ns', 'decaps_ns', 'peak_ram_kb']
     else: # sig
         operations = ['keypair', 'sign', 'verify']
-        columns = ['algorithm', 'keypair_ns', 'sign_ns', 'verify_ns']
+        csv_columns = ['algorithm', 'keypair_ns', 'sign_ns', 'verify_ns', 'peak_ram_kb']
+
+    try:
+        with open(args.input_file, 'r') as f:
+            content = f.read()
+    except FileNotFoundError:
+        print(f"Error: Input file not found at {args.input_file}")
+        exit(1)
+
+    parsed_data = parse_combined_output(content, operations)
+
+    if not parsed_data:
+        print(f"Warning: No valid data parsed from {args.input_file}.")
+        return
+
+    df = pd.DataFrame(parsed_data)
+    df = df[csv_columns]
     
     output_dir = os.path.dirname(args.output_file)
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
-    
-    parsed_data = parse_oqs_table_output_final(args.input_file, operations)
-    
-    if not parsed_data:
-        print(f"Warning: No valid data parsed from {args.input_file}.")
-        pd.DataFrame(columns=columns).to_csv(args.output_file, index=False)
-        return
 
-    df = pd.DataFrame(parsed_data, columns=columns)
-    df.dropna(inplace=True)
     df.to_csv(args.output_file, index=False)
-    print(f"Successfully parsed {len(df)} records and saved to {args.output_file}")
+    print(f"Successfully parsed {len(df)} records (speed+memory) and saved to {args.output_file}")
+
 
 if __name__ == "__main__":
     main()

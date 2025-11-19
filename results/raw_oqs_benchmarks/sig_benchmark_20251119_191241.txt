@@ -1,0 +1,294 @@
+--- BEGIN ALGORITHM: Dilithium2 ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:12:56
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Dilithium2                           |            |                |                 |            |                           |           
+keypair                              |      10858 |          1.000 |          92.100 |      6.149 |                    220887 |      14699
+sign                                 |       2485 |          1.000 |         402.474 |    261.660 |                    965531 |     627902
+verify                               |      10240 |          1.000 |          97.661 |      5.983 |                    234272 |      14310
+Ended at 2025-11-19 19:12:59
+	Command being timed: "third_party/liboqs/build/tests/speed_sig --duration 1 Dilithium2"
+	User time (seconds): 2.99
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 407
+	Voluntary context switches: 1
+	Involuntary context switches: 12
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: Dilithium2 ---
+
+--- BEGIN ALGORITHM: Dilithium3 ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:12:59
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Dilithium3                           |            |                |                 |            |                           |           
+keypair                              |       6036 |          1.000 |         165.676 |      8.398 |                    397448 |      20119
+sign                                 |       1479 |          1.001 |         676.595 |    467.891 |                   1623464 |    1122869
+verify                               |       6289 |          1.000 |         159.015 |      8.090 |                    381502 |      19370
+Ended at 2025-11-19 19:13:02
+	Command being timed: "third_party/liboqs/build/tests/speed_sig --duration 1 Dilithium3"
+	User time (seconds): 2.99
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 413
+	Voluntary context switches: 1
+	Involuntary context switches: 12
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: Dilithium3 ---
+
+--- BEGIN ALGORITHM: Dilithium5 ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:13:02
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Dilithium5                           |            |                |                 |            |                           |           
+keypair                              |       4038 |          1.000 |         247.655 |     12.005 |                    594141 |      28774
+sign                                 |       1258 |          1.000 |         795.050 |    468.513 |                   1907712 |    1124384
+verify                               |       3791 |          1.000 |         263.883 |     27.450 |                    633157 |      65840
+Ended at 2025-11-19 19:13:05
+	Command being timed: "third_party/liboqs/build/tests/speed_sig --duration 1 Dilithium5"
+	User time (seconds): 2.99
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 424
+	Voluntary context switches: 1
+	Involuntary context switches: 6
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: Dilithium5 ---
+
+--- BEGIN ALGORITHM: Falcon-512 ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:13:05
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Falcon-512                           |            |                |                 |            |                           |           
+keypair                              |         58 |          1.018 |       17553.500 |   5817.631 |                  42127362 |   13962128
+sign                                 |        211 |          1.001 |        4745.735 |    125.796 |                  11389231 |     301884
+verify                               |      22069 |          1.000 |          45.314 |      3.525 |                    108633 |       8370
+Ended at 2025-11-19 19:13:08
+	Command being timed: "third_party/liboqs/build/tests/speed_sig --duration 1 Falcon-512"
+	User time (seconds): 3.02
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 408
+	Voluntary context switches: 1
+	Involuntary context switches: 8
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: Falcon-512 ---
+
+--- BEGIN ALGORITHM: Falcon-1024 ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:13:08
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+Falcon-1024                          |            |                |                 |            |                           |           
+keypair                              |         22 |          1.001 |       45489.409 |  20347.791 |                 109171954 |   48834216
+sign                                 |         97 |          1.005 |       10357.711 |    235.795 |                  24857651 |     565827
+verify                               |      10758 |          1.000 |          92.960 |      5.080 |                    222959 |      12117
+Ended at 2025-11-19 19:13:11
+	Command being timed: "third_party/liboqs/build/tests/speed_sig --duration 1 Falcon-1024"
+	User time (seconds): 3.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 416
+	Voluntary context switches: 1
+	Involuntary context switches: 13
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: Falcon-1024 ---
+
+--- BEGIN ALGORITHM: SPHINCS+-SHA2-128f-simple ---
+Configuration info
+==================
+Target platform:  x86_64-Linux-6.8.0-87-generic
+Compiler:         gcc (15.2.0)
+Compile options:  [-Wa,--noexecstack;-O3;-fomit-frame-pointer;-fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wbad-function-cast]
+OQS version:      0.10.0
+Git commit:       36be57445d8ca53f7095160fde548efe82ace09d
+OpenSSL enabled:  Yes (OpenSSL 3.6.0 1 Oct 2025)
+AES:              NI
+SHA-2:            OpenSSL
+SHA-3:            C
+OQS build flags:  OQS_DIST_BUILD OQS_OPT_TARGET=generic CMAKE_BUILD_TYPE=Release 
+CPU exts active:  AES POPCNT
+Speed test
+==========
+Started at 2025-11-19 19:13:11
+Operation                            | Iterations | Total time (s) | Time (us): mean | pop. stdev | CPU cycles: mean          | pop. stdev
+------------------------------------ | ----------:| --------------:| ---------------:| ----------:| -------------------------:| ----------:
+SPHINCS+-SHA2-128f-simple            |            |                |                 |            |                           |           
+keypair                              |        683 |          1.000 |        1464.242 |     48.068 |                   3513745 |     115342
+sign                                 |         30 |          1.026 |       34199.833 |    306.054 |                  82077824 |     734511
+verify                               |        491 |          1.002 |        2040.173 |     59.121 |                   4896001 |     141929
+Ended at 2025-11-19 19:13:15
+	Command being timed: "third_party/liboqs/build/tests/speed_sig --duration 1 SPHINCS+-SHA2-128f-simple"
+	User time (seconds): 3.02
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 396
+	Voluntary context switches: 1
+	Involuntary context switches: 12
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+--- END ALGORITHM: SPHINCS+-SHA2-128f-simple ---
+
