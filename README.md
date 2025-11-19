@@ -55,6 +55,7 @@ The following charts represent the average time for cryptographic operations and
 ![KEM Public Key Size](figures/kem_public_key_bytes_comparison.png)
 ![KEM Secret Key Size](figures/kem_secret_key_bytes_comparison.png)
 ![KEM Ciphertext Size](figures/kem_ciphertext_bytes_comparison.png)
+![KEM Peak RAM Usage](figures/kem_peak_ram_comparison.png)
 
 
 ### Digital Signature Schemes
@@ -66,6 +67,7 @@ The following charts represent the average time for cryptographic operations and
 ![Signature Public Key Size](figures/sig_public_key_bytes_comparison.png)
 ![Signature Secret Key Size](figures/sig_secret_key_bytes_comparison.png)
 ![Signature Size](figures/sig_signature_bytes_comparison.png)
+![Signature Peak RAM Usage](figures/sig_peak_ram_comparison.png)
 
 
 ## Getting Started: How to Reproduce Our Results
@@ -130,11 +132,11 @@ The pipeline will guide you through all 7 stages, and upon completion, all resul
 
 This project is just getting started. Our roadmap includes several exciting extensions:
 
-- **Phase 2: Expand Performance Metrics**
+- **Phase 2: Expand Performance Metrics (Completed)**
     - [x] Measure and analyze key sizes, ciphertext sizes, and signature sizes.
-    - [ ] **Next:** Integrate memory profiling to measure RAM consumption during cryptographic operations.
+    - [x] Integrate memory profiling to measure peak RAM consumption during cryptographic operations.
 - **Phase 3: Cross-Platform Benchmarking**
-    - [ ] Run the same benchmark suite on a resource-constrained device (e.g., Raspberry Pi 4) to analyze performance in an IoT context.
+    - [ ] **Next:** Run the same benchmark suite on a resource-constrained device (e.g., Raspberry Pi 4) to analyze performance in an IoT context.
     - [ ] Benchmark on an ARM64-based server (e.g., AWS Graviton) to compare x86-64 vs. ARM performance.
 - **Phase 4: Real-World Scenario Analysis**
     - [ ] Utilize the OQS integration with OpenSSL to benchmark the overhead of PQC in a full TLS 1.3 handshake.
