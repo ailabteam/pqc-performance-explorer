@@ -1,0 +1,7 @@
+algorithm,public_key_bytes,secret_key_bytes,signature_bytes
+Dilithium2,1312,2528,2420
+Dilithium3,1952,4000,3293
+Dilithium5,2592,4864,4595
+Falcon-512,897,1281,752
+Falcon-1024,1793,2305,1462
+SPHINCS+-SHA2-128f-simple,32,64,17088

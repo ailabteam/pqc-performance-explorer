@@ -1,0 +1,6 @@
+algorithm,public_key_bytes,secret_key_bytes,ciphertext_bytes
+Kyber512,800,1632,768
+Kyber768,1184,2400,1088
+Kyber1024,1568,3168,1568
+Classic-McEliece-348864,261120,6492,96
+HQC-128,2249,2305,4433
